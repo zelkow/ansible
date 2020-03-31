@@ -1,0 +1,11 @@
+[workers]
+i5 ansible_user=sdgo
+maryna-pc ansible_user=sdgo
+artur-pc ansible_user=sdgo
+
+[pc]
+maryna-pc   ansible_user=sdgo
+artur-pc    ansible_user=sdgo
+
+[control]
+i5 ansible_connection=local
