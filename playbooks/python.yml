@@ -1,0 +1,9 @@
+---
+- hosts: pc
+  gather_facts: false
+  tasks:
+      - name: Install Python 3.7
+        become: yes
+        apt:
+            name: software-properties-common
+            update_cache: yes
