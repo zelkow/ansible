@@ -1,0 +1,10 @@
+---
+- hosts: test-pc
+  become: True
+  tasks:
+    - name: download chrome deb package
+      command: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+    - name: install via apt
+      command: sudo apt install ./google-chrome-stable_current_amd64.deb
+

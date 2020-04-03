@@ -1,0 +1,8 @@
+---
+- hosts: pc
+  tasks:
+      - name: Install Snap
+        become: yes
+        apt:
+            name: snapd
+            update_cache: yes

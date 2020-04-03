@@ -1,0 +1,8 @@
+---
+- hosts: pc
+  tasks:
+      - name: Install vino (Dekstop sharing)
+        become: yes
+        apt:
+            name: vino
+            update_cache: yes

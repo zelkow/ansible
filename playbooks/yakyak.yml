@@ -1,0 +1,8 @@
+---
+- hosts: pc
+  tasks:
+      - name: Install Snap YakYak
+        become: yes
+        snap:
+            name: yakyak
+            classic: yes

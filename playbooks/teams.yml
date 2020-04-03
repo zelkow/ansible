@@ -1,0 +1,8 @@
+---
+- hosts: pc
+  tasks:
+      - name: Install Teams Snap
+        become: yes
+        snap:
+            name: teams-for-linux
+            classic: yes

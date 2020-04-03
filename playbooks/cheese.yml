@@ -1,0 +1,9 @@
+---
+- hosts: pc
+  gather_facts: false
+  tasks:
+      - name: Install Cheese (webcam)
+        become: yes
+        apt:
+            name: cheese
+            update_cache: yes

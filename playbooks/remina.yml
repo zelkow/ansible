@@ -1,0 +1,8 @@
+---
+- hosts: pc
+  tasks:
+      - name: Install Remina (Dekstop sharing)
+        become: yes
+        apt:
+            name: remmina
+            update_cache: yes
