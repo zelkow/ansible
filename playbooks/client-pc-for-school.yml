@@ -1,0 +1,89 @@
+---
+- hosts: pc
+  become: yes
+
+# including all tools for school
+
+  tasks:
+      - name: Install Webcam tools
+        apt:
+            pkg: 
+            - cheese
+            - guvcview
+            - stopmotion
+            - gimp
+            - gimp-gap
+            - xfce4-session
+      
+      - name: Install ffmpeg
+        apt:
+             name: ffmpeg
+             update_cache: yes
+
+      - name: install The companion to MPlayer, MEncoder can record from a webcam to video files. 
+        apt:
+            pkg:
+            - mplayer
+            - mencoder
+
+      - name: install image xnview
+        apt_repository:
+            repo: ppa:dhor/myway
+            state: present
+
+      - name: install xnview
+        apt: 
+         name: xnview
+         update_cache: yes
+
+      - name: Install software-properties-common for Python
+        apt:
+            name: software-properties-common
+      
+      - name: install Chrome from downloaded chrome deb package + Lynx for console browsing
+        apt:
+            deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            apt: lynx
+
+      - name: instal chrome extensions
+        script: ./install-chrome-ext.sh
+
+      - name: install system tools
+        apt:
+            pkg:
+                - keepass2
+                - nmap
+
+      # install SNAPs
+
+      - name: Install Snap
+        apt:
+            name: snapd
+            update_cache: yes
+
+      - name: Install Teams Snap
+        become: yes
+        snap:
+            name: teams-for-linux
+            classic: yes
+
+      - name: Install Snap YakYak
+        snap:
+            name: 
+             - yakyak
+             - kturtle
+             - minuet
+
+      - name: Install Snap Skype
+        snap:
+            name: skype
+            classic: yes
+
+      # educational
+
+      - name: install Educational packages
+        apt:
+            pkg:
+              - kanagram
+              - childsplay
+              - tuxmath
