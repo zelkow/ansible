@@ -9,3 +9,7 @@ test-pc    ansible_user=sdgo
 
 [control]
 i5 ansible_connection=local
+
+[pi]
+orangepizero ansible_user=sdgo
+ubuntu ansible_user=sdgo
